@@ -28,13 +28,20 @@ namespace Comedor
 
         private void button7_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(BCodigo.Text.Trim()) == false)
+            try
             {
-                string cmd = string.Format("select * from cliente where id_cleinte = '{0}'", BCodigo.Text.Trim());
-                DataSet ds;
-                ds = Utilidades.Ejecutar(cmd);
-                Cliente.Text = ds.Tables[0].Rows[0]["nombre"].ToString().Trim();
-                SCodigo.Focus();
+                if (string.IsNullOrEmpty(BCodigo.Text.Trim()) == false)
+                {
+                    string cmd = string.Format("select * from cliente where Id_Cliente = '{0}'", BCodigo.Text.Trim());
+                    DataSet ds;
+                    ds = Utilidades.Ejecutar(cmd);
+                    Cliente.Text = ds.Tables[0].Rows[0]["nombre"].ToString().Trim();
+                    SCodigo.Focus();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Cliente no Existe");
             }
         }
     }

@@ -51,18 +51,18 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button7 = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.TTotal = new MiLibreria.ErrortxtBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button7 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.TTotal = new MiLibreria.ErrortxtBox();
+            this.Factu = new System.Windows.Forms.PictureBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Factu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,7 +72,7 @@
             // 
             // Cliente
             // 
-            this.Cliente.Location = new System.Drawing.Point(128, 120);
+            this.Cliente.Location = new System.Drawing.Point(128, 88);
             this.Cliente.Name = "Cliente";
             this.Cliente.Numeros = false;
             this.Cliente.Size = new System.Drawing.Size(202, 20);
@@ -82,7 +82,7 @@
             // Atiende
             // 
             this.Atiende.Enabled = false;
-            this.Atiende.Location = new System.Drawing.Point(128, 68);
+            this.Atiende.Location = new System.Drawing.Point(128, 36);
             this.Atiende.Name = "Atiende";
             this.Atiende.Numeros = false;
             this.Atiende.Size = new System.Drawing.Size(100, 20);
@@ -91,7 +91,7 @@
             // 
             // BCodigo
             // 
-            this.BCodigo.Location = new System.Drawing.Point(128, 94);
+            this.BCodigo.Location = new System.Drawing.Point(128, 62);
             this.BCodigo.Name = "BCodigo";
             this.BCodigo.Numeros = true;
             this.BCodigo.Size = new System.Drawing.Size(100, 20);
@@ -100,7 +100,7 @@
             // 
             // TPrecio
             // 
-            this.TPrecio.Location = new System.Drawing.Point(444, 169);
+            this.TPrecio.Location = new System.Drawing.Point(336, 169);
             this.TPrecio.Name = "TPrecio";
             this.TPrecio.Numeros = false;
             this.TPrecio.Size = new System.Drawing.Size(100, 20);
@@ -109,9 +109,9 @@
             // 
             // TCantidad
             // 
-            this.TCantidad.Location = new System.Drawing.Point(336, 169);
+            this.TCantidad.Location = new System.Drawing.Point(444, 169);
             this.TCantidad.Name = "TCantidad";
-            this.TCantidad.Numeros = false;
+            this.TCantidad.Numeros = true;
             this.TCantidad.Size = new System.Drawing.Size(100, 20);
             this.TCantidad.TabIndex = 5;
             this.TCantidad.Vacio = true;
@@ -129,7 +129,7 @@
             // 
             this.SCodigo.Location = new System.Drawing.Point(22, 169);
             this.SCodigo.Name = "SCodigo";
-            this.SCodigo.Numeros = false;
+            this.SCodigo.Numeros = true;
             this.SCodigo.Size = new System.Drawing.Size(100, 20);
             this.SCodigo.TabIndex = 7;
             this.SCodigo.Vacio = true;
@@ -142,6 +142,7 @@
             this.BAgregar.TabIndex = 8;
             this.BAgregar.Text = "Agregar";
             this.BAgregar.UseVisualStyleBackColor = true;
+            this.BAgregar.Click += new System.EventHandler(this.BAgregar_Click);
             // 
             // Eliminar
             // 
@@ -151,6 +152,7 @@
             this.Eliminar.TabIndex = 9;
             this.Eliminar.Text = "Eliminar";
             this.Eliminar.UseVisualStyleBackColor = true;
+            this.Eliminar.Click += new System.EventHandler(this.Eliminar_Click);
             // 
             // BCliente
             // 
@@ -160,6 +162,7 @@
             this.BCliente.TabIndex = 10;
             this.BCliente.Text = "Cliente";
             this.BCliente.UseVisualStyleBackColor = true;
+            this.BCliente.Click += new System.EventHandler(this.BCliente_Click);
             // 
             // BProducto
             // 
@@ -169,6 +172,7 @@
             this.BProducto.TabIndex = 11;
             this.BProducto.Text = "Producto";
             this.BProducto.UseVisualStyleBackColor = true;
+            this.BProducto.Click += new System.EventHandler(this.BProducto_Click);
             // 
             // BNuevo
             // 
@@ -178,6 +182,7 @@
             this.BNuevo.TabIndex = 12;
             this.BNuevo.Text = "Nuevo";
             this.BNuevo.UseVisualStyleBackColor = true;
+            this.BNuevo.Click += new System.EventHandler(this.BNuevo_Click);
             // 
             // BFacturar
             // 
@@ -192,7 +197,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(59, 70);
+            this.label1.Location = new System.Drawing.Point(59, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 15);
             this.label1.TabIndex = 14;
@@ -202,7 +207,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(478, 149);
+            this.label2.Location = new System.Drawing.Point(365, 149);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 15);
             this.label2.TabIndex = 15;
@@ -235,7 +240,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(78, 122);
+            this.label5.Location = new System.Drawing.Point(78, 90);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 15);
             this.label5.TabIndex = 18;
@@ -245,7 +250,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(359, 149);
+            this.label6.Location = new System.Drawing.Point(465, 149);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 15);
             this.label6.TabIndex = 19;
@@ -256,14 +261,18 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(33, 96);
+            this.label7.Location = new System.Drawing.Point(76, 64);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 15);
+            this.label7.Size = new System.Drawing.Size(46, 15);
             this.label7.TabIndex = 20;
-            this.label7.Text = "Código Articulo";
+            this.label7.Text = "Código";
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
@@ -273,53 +282,11 @@
             this.Importe});
             this.dataGridView1.Location = new System.Drawing.Point(12, 195);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(671, 266);
             this.dataGridView1.TabIndex = 21;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(234, 94);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(96, 23);
-            this.button7.TabIndex = 22;
-            this.button7.Text = "Buscar";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(522, 464);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(34, 15);
-            this.label8.TabIndex = 23;
-            this.label8.Text = "Total";
-            // 
-            // TTotal
-            // 
-            this.TTotal.Enabled = false;
-            this.TTotal.Location = new System.Drawing.Point(583, 464);
-            this.TTotal.Name = "TTotal";
-            this.TTotal.Numeros = false;
-            this.TTotal.Size = new System.Drawing.Size(100, 20);
-            this.TTotal.TabIndex = 24;
-            this.TTotal.Vacio = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Comedor.Properties.Resources.Facturar;
-            this.pictureBox1.Location = new System.Drawing.Point(463, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(333, 151);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 26;
-            this.pictureBox1.TabStop = false;
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
             // 
             // Codigo
             // 
@@ -335,6 +302,7 @@
             // 
             this.Descripcion.HeaderText = "Descripción";
             this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
             this.Descripcion.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Descripcion.Width = 375;
             // 
@@ -342,12 +310,14 @@
             // 
             this.Precio.HeaderText = "Precio";
             this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
             this.Precio.Width = 90;
             // 
             // Cantidad
             // 
             this.Cantidad.HeaderText = "Cantidad";
             this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
             this.Cantidad.Width = 60;
             // 
             // Importe
@@ -355,6 +325,53 @@
             this.Importe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Importe.HeaderText = "Importe";
             this.Importe.Name = "Importe";
+            this.Importe.ReadOnly = true;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(234, 62);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(96, 23);
+            this.button7.TabIndex = 22;
+            this.button7.Text = "Buscar";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(510, 468);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(34, 15);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Total";
+            // 
+            // TTotal
+            // 
+            this.TTotal.Enabled = false;
+            this.TTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TTotal.Location = new System.Drawing.Point(552, 464);
+            this.TTotal.Name = "TTotal";
+            this.TTotal.Numeros = false;
+            this.TTotal.Size = new System.Drawing.Size(131, 22);
+            this.TTotal.TabIndex = 24;
+            this.TTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TTotal.Vacio = false;
+            // 
+            // Factu
+            // 
+            this.Factu.Image = global::Comedor.Properties.Resources.Facturar;
+            this.Factu.Location = new System.Drawing.Point(463, 12);
+            this.Factu.Name = "Factu";
+            this.Factu.Size = new System.Drawing.Size(333, 151);
+            this.Factu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Factu.TabIndex = 26;
+            this.Factu.TabStop = false;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // Facturacion
             // 
@@ -385,14 +402,14 @@
             this.Controls.Add(this.BCodigo);
             this.Controls.Add(this.Atiende);
             this.Controls.Add(this.Cliente);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.Factu);
             this.MaximizeBox = false;
             this.Name = "Facturacion";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Facturacion";
             this.Load += new System.EventHandler(this.Facturacion_Load);
-            this.Controls.SetChildIndex(this.pictureBox1, 0);
+            this.Controls.SetChildIndex(this.Factu, 0);
             this.Controls.SetChildIndex(this.Salir, 0);
             this.Controls.SetChildIndex(this.Cliente, 0);
             this.Controls.SetChildIndex(this.Atiende, 0);
@@ -419,7 +436,7 @@
             this.Controls.SetChildIndex(this.label8, 0);
             this.Controls.SetChildIndex(this.TTotal, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Factu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -452,7 +469,7 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label8;
         private MiLibreria.ErrortxtBox TTotal;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox Factu;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
